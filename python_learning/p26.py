@@ -1,10 +1,20 @@
 # Find the Nth Prime number.
 
 input_num = int(input("Enter a number to find the Nth Prime number: "))
-prime_list = [2, 3, 5]
-count = 0
-itr_num = 4
-prime_num = 0
+
+for i in range(1, input_num+1):
+    for j in range(2, input_num ** 2):
+      for k in range(2, input_num ** 2):
+        if k > j or j % k == 0:
+          print(f'{j} is not a Prime number')
+          print(f'{j}/{k}')
+          continue
+      else:
+        print(f'{j} is a Prime number.')
+        print(j)
+        #continue
+print(f'The {i}th Prime number is: {j}')
+
 
 
 
@@ -19,16 +29,15 @@ prime_num = 0
 
 
 '''
-while count < input_num:
-  for i in prime_list:
-    if itr_num % i == 0:
-      pass
-  itr_num += 1
+input_num = int(input('Enter a number to check if it is a Prime number: '))
+if input_num > 1:
+  for i in range(2, input_num):
+    if input_num % i == 0:
+      print(f'{input_num} is not a Prime number')
+      break
   else:
-    prime_list.append(itr_num)
-    count += 1
-    itr_num += 1
-prime_num = itr_num
+    print(f'{input_num} is a Prime number.')
 
-print('prime num', prime_num)
+else:
+  print('Invalid input.')
 '''
